@@ -1,7 +1,7 @@
 // @redux step 3
 
 // состояние по-умолчанию, если вдруг state не определен
-import {CREATE_POST} from "./types";
+import {CREATE_POST, FETCH_POSTS} from "./types";
 
 const initialState = {
   posts: [],
@@ -13,7 +13,9 @@ export const postsReducer = (state = initialState, action) => {
   switch (action.type) {
     case CREATE_POST:
       // копия state, важно для имутабельности
-      return {...state, posts: state.posts.concat([action.payload])}
+      return { ...state, posts: state.posts.concat([action.payload]) }
+    case FETCH_POSTS:
+      return { ...state, fetchedPosts: action.payload }
       //оба метода идентичны для развертывания свойств
       //  копируем предыдущей стейт и добавляем в него новый post
       //return {...state, posts: [...state.posts, action.payload] }
