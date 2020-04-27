@@ -1,13 +1,19 @@
 import React from "react";
 
 export default class PostForm extends React.Component {
-  constructor(props) {
-    super(props);
+  // constructor(props) {
+  //   super(props);
+  //
+  //   this.state = {
+  //     title:''
+  //   }
+  // }
 
-    this.state = {
-      title:''
-    }
+  // альтернативная запись конструктора
+  state = {
+    title: ''
   }
+
   // стрелочная функция, чтобы не терялся контекст
   // event - параментр функции
   submitHandler = event => {
@@ -22,10 +28,8 @@ export default class PostForm extends React.Component {
   }
   changeInputHandler = event => {
     event.persist()
-    // console.log(event)
-    // console.log(event.target)
-    this.setState(prev => ({...prev, ...{
 
+    this.setState(prev => ({...prev, ...{
         [event.target.name]: event.target.value
       }}))
   }
