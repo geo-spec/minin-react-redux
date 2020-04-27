@@ -8,11 +8,13 @@ import {Provider} from 'react-redux'
 
 // @redux step 1
 const store = createStore(rootReducer)
-
-render(
-  <React.StrictMode>
+const app = (
+  <Provider store={store}>
     <App />
-  </React.StrictMode>,
+  </Provider>
+)
+
+render(app,
   document.getElementById('root')
 );
 
