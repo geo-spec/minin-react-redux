@@ -4,7 +4,9 @@ export default class PostForm extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {}
+    this.state = {
+      title:''
+    }
   }
   // стрелочная функция, чтобы не терялся контекст
   // event - параментр функции
@@ -14,9 +16,10 @@ export default class PostForm extends React.Component {
   }
   changeInputHandler = event => {
     event.persist()
-    console.log(event)
-    console.log(event.target)
+    // console.log(event)
+    // console.log(event.target)
     this.setState(prev => ({...prev, ...{
+
         [event.target.name]: event.target.value
       }}))
   }
