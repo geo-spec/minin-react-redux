@@ -21,6 +21,11 @@ class PostForm extends React.Component {
   submitHandler = event => {
     event.preventDefault()
     const {title} = this.state
+    // извлекаем только title из state
+    if (!title.trim()) { //очищаем от пробелов
+      alert('empty post')
+      return
+    }
 
     const newPost = {
       title, id: Date.now().toString()
