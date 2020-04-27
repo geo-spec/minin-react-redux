@@ -19,6 +19,7 @@ class PostForm extends React.Component {
   // стрелочная функция, чтобы не терялся контекст
   // event - параментр функции
   submitHandler = event => {
+    // откулючаем поведение (отправку формы) по-умолчанию
     event.preventDefault()
     const {title} = this.state
     // извлекаем только title из state
