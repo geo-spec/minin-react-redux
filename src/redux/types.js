@@ -1,0 +1,1 @@
+export const CREATE_POST = 'POST/ REATE_POST'
