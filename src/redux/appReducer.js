@@ -1,7 +1,8 @@
-import {HIDE_LOADER, SHOW_LOADER} from "./types";
+import {HIDE_ALERT, HIDE_LOADER, SHOW_ALERT, SHOW_LOADER} from "./types";
 
 const initialState = {
-  loading: false
+  loading: false,
+  alert: null
 }
 
 export const appReducer = (state = initialState, action) => {
@@ -10,8 +11,11 @@ export const appReducer = (state = initialState, action) => {
     case SHOW_LOADER:
       return {...state, loading: true}
     case HIDE_LOADER:
-      console.log('HIDE_LOADER')
       return {...state, loading: false}
+    case SHOW_ALERT:
+      return {...state, alert: action.payload}
+    case HIDE_ALERT:
+      return {...state, alert: null}
     default: return state
 
   }
