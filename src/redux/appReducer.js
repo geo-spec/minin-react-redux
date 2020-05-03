@@ -16,6 +16,5 @@ export const appReducer = (state = initialState, action) => {
     case HIDE_ALERT:
       return {...state, alert: null}
     default: return state
-
   }
 }
